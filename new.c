@@ -4,8 +4,7 @@
 #include <string.h>
 
 
-//Use Structure to store more than one data type
-//Since your file not only consist of string, it also have int
+
 struct students
 {
     char a[9];
@@ -15,7 +14,6 @@ struct students
     char e[10];
 };
 
-//Here I make 100 line so that you can read 100 line of text file
 struct students total_students[100];
 
 
@@ -38,21 +36,12 @@ void read_file(){
     }
 
     else {
-        //Check for number of line
-            char ch;
             int count = get_total_lines();
         rewind(myfile);
 
-        //Since you put 2 earlier in the member.txt we need to dump it
-        //so that it wont affect the scanning process
-        //int temp;
-        //fscanf(myfile, "%d", &temp);
-        //printf("%d\n", temp);
-        //Now scan all the line inside the text
         int i;
         for (i = 0; i < count; i++) {
             fscanf(myfile, "%s %s %s %s %s\n",  total_students[i].a,  total_students[i].b,  total_students[i].c,  total_students[i].d,  total_students[i].e);
-            //printf("%s %s %s %s %s\n",  total_students[i].a,  total_students[i].b,  total_students[i].c,  total_students[i].d,  total_students[i].e);
         }
     }
 }
